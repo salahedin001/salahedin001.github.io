@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="تدريب عن بُعد في Excel وPower BI وSQL والذكاء الاصطناعي: ورش مباشرة، جلسات بث، ودورات مسجّلة مع المدرّب صلاح الدين كشلاف منذ 2012.">
+<meta property="og:title" content="صلاح الدين للتدريب | تحليل البيانات والذكاء الاصطناعي عن بُعد">
+<meta property="og:description" content="ورش مباشرة أونلاين ودورات مسجّلة في Excel وPower BI وSQL والذكاء الاصطناعي. درّب موظفي المؤسسة الوطنية للنفط وليبيانا والبريقة ومعاملات.">
+<meta property="og:image" content="https://salahedin001.github.io/og.png">
+<meta property="og:url" content="https://salahedin001.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>صلاح الدين للتدريب</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a spreadsheet workbook — formula-bar hero, catalog as sheet rows, quiet sections between */
+:root{
+  --paper:#f6f8f7; --sheet:#ffffff; --ink:#10282f; --muted:#5a6f73; --grid:#d8e3e1;
+  --teal:#0f4a52; --aqua:#127a6c; --gold:#a8730e; --gold-soft:#fbf1da; --aqua-soft:#e2f4f0;
+  --display:"Readex Pro","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --body:"IBM Plex Sans Arabic",Tahoma,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0b1c22; --sheet:#10262d; --ink:#e6f1ef; --muted:#93aaa8; --grid:#21414a;
+  --teal:#7fd6c8; --aqua:#4fe0c8; --gold:#f4c95d; --gold-soft:#2b2614; --aqua-soft:#12342f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0b1c22; --sheet:#10262d; --ink:#e6f1ef; --muted:#93aaa8; --grid:#21414a;
+  --teal:#7fd6c8; --aqua:#4fe0c8; --gold:#f4c95d; --gold-soft:#2b2614; --aqua-soft:#12342f; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75;direction:rtl}
+.wrap{max-width:1080px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:56px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.3}
+h2{font-size:clamp(1.5rem,3.2vw,2rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;color:var(--aqua);direction:ltr;display:inline-block}
+.lead{color:var(--muted);max-width:62ch}
+a{color:var(--aqua)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:48px 40px}
+.who{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;color:var(--muted);font-size:.95rem}
+.who strong{color:var(--ink);font-family:var(--display);font-size:1.05rem}
+.fx{margin-top:22px;display:grid;grid-template-columns:auto 1fr;border:1px solid var(--grid);background:var(--sheet);border-radius:6px;overflow:hidden}
+.fx .name{font-family:var(--mono);font-size:.85rem;color:var(--muted);padding:10px 14px;border-left:1px solid var(--grid);direction:ltr;display:flex;align-items:center;gap:10px}
+.fx .name i{font-style:italic;color:var(--aqua);font-family:Georgia,serif;font-weight:700}
+.fx .val{padding:10px 16px;font-family:var(--body);font-weight:500;font-size:.95rem;color:var(--teal);min-width:0;overflow-wrap:anywhere}
+.hero h1{margin-top:28px;font-size:clamp(2rem,5.6vw,3.6rem);font-weight:700;letter-spacing:-.01em}
+.hero h1 .hl{color:var(--aqua)}
+.hero .lead{margin-top:16px;font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{font-family:var(--display);font-weight:600;font-size:1rem;padding:12px 22px;border-radius:6px;border:1.5px solid var(--teal);text-decoration:none;cursor:pointer;background:transparent;color:var(--teal)}
+.btn.primary{background:var(--teal);color:var(--sheet)}
+.facts{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--grid)}
+.facts div{padding:14px 0 0;display:flex;flex-direction:column;gap:2px}
+.facts b{font-family:var(--display);font-size:1.6rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.facts span{color:var(--muted);font-size:.9rem}
+
+/* formats */
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
+.fmt{background:var(--sheet);border:1px solid var(--grid);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.fmt .tag{font-family:var(--mono);font-size:.75rem;color:var(--gold);direction:ltr;align-self:flex-start}
+.fmt p{color:var(--muted);font-size:.95rem}
+.fmt ul{margin:0;padding-inline-start:18px;font-size:.92rem}
+
+/* sheet / catalog */
+.sheet{margin-top:28px;border:1px solid var(--grid);border-radius:8px;overflow-x:auto;background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.95rem}
+th,td{border-bottom:1px solid var(--grid);padding:12px 14px;text-align:right;vertical-align:top}
+thead th{font-family:var(--mono);font-size:.75rem;font-weight:500;color:var(--muted);background:var(--paper);letter-spacing:.04em}
+td.code{font-family:var(--mono);font-size:.82rem;color:var(--muted);direction:ltr;text-align:left;white-space:nowrap;width:1%}
+td.title b{font-family:var(--display);font-weight:600;display:block}
+td.title span{color:var(--muted);font-size:.88rem}
+tr.star{background:var(--gold-soft)}
+tr.star td.code{color:var(--gold)}
+.chip{display:inline-block;font-size:.78rem;padding:1px 9px;border-radius:999px;border:1px solid var(--grid);margin:2px 0 2px 4px;white-space:nowrap}
+.chip.on{background:var(--aqua-soft);border-color:transparent;color:var(--teal)}
+.new{font-family:var(--mono);font-size:.7rem;color:var(--gold);margin-inline-start:6px}
+
+/* clients */
+.clients{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.clients span{font-family:var(--display);font-weight:600;padding:10px 16px;border:1px solid var(--grid);border-radius:6px;background:var(--sheet)}
+
+/* steps */
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--aqua);padding-top:12px;display:flex;flex-direction:column;gap:4px}
+.steps li::before{content:"0" counter(s);font-family:var(--mono);color:var(--aqua);font-size:.85rem}
+.steps li span{color:var(--muted);font-size:.92rem}
+
+/* corporate */
+.corp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start}
+.corp ul{margin:16px 0 0;padding-inline-start:20px;display:flex;flex-direction:column;gap:6px}
+
+/* builder */
+.builder{background:var(--sheet);border:1px solid var(--grid);border-radius:10px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:24px}
+.fields{display:flex;flex-direction:column;gap:14px}
+label{font-weight:600;font-size:.9rem;display:flex;flex-direction:column;gap:6px}
+select,input{font:inherit;padding:10px 12px;border:1px solid var(--grid);border-radius:6px;background:var(--paper);color:var(--ink);width:100%}
+.out{display:flex;flex-direction:column;gap:12px;min-width:0}
+.msg{white-space:pre-wrap;background:var(--paper);border:1px dashed var(--grid);border-radius:6px;padding:14px;font-size:.92rem;min-height:180px;overflow-wrap:anywhere}
+.contact{display:flex;flex-direction:column;gap:6px;font-size:.92rem;color:var(--muted)}
+.contact code{font-family:var(--mono);color:var(--ink);direction:ltr;display:inline-block;user-select:all}
+.note{font-size:.85rem;color:var(--muted)}
+
+/* faq */
+details{border-bottom:1px solid var(--grid);padding-block:14px}
+summary{cursor:pointer;font-family:var(--display);font-weight:600}
+details p{margin-top:8px;color:var(--muted);max-width:70ch}
+
+footer{border-top:1px solid var(--grid);padding-block:28px;color:var(--muted);font-size:.9rem}
+footer .row{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+
+@media (max-width:760px){
+  .corp,.builder{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:minmax(0,1fr)}
+  .facts div{flex-direction:row;align-items:baseline;gap:10px;padding-block:8px;border-bottom:1px solid var(--grid)}
+  section{padding-block:40px}
+}
+@media (prefers-reduced-motion:no-preference){.btn{transition:transform .15s}.btn:hover{transform:translateY(-1px)}}
+</style>
+</head>
+<body>
+
+
+<header class="wrap hero">
+  <div class="who"><strong>صلاح الدين كشلاف</strong><span>مدرّب تحليل بيانات وذكاء اصطناعي · منذ 2012</span><span>ليبيا · العالم العربي</span></div>
+
+  <div class="fx" aria-label="شريط الصيغة">
+    <div class="name">A1 <i>fx</i></div>
+    <div class="val">=تدريب(عن_بُعد ، بالعربية ، بنتائج_حقيقية)</div>
+  </div>
+
+  <h1>تعلّم Excel وPower BI وSQL والذكاء الاصطناعي <span class="hl">من مكانك</span>، مع مدرّب درّب مئات الموظفين</h1>
+  <p class="lead">ورش مباشرة أونلاين، وجلسات بث مفتوحة، ودورات مسجّلة تتعلم منها بوقتك. أمثلة عملية من بيئة العمل العربية، وشرح بلغة واضحة يناسب المبتدئ والمحترف.</p>
+
+  <div class="cta">
+    <a class="btn primary" href="#book">اطلب حجز ورشة</a>
+    <a class="btn" href="https://wa.me/218918883311" target="_blank" rel="noopener">واتساب</a>
+    <a class="btn" href="#courses">تصفّح الدورات</a>
+  </div>
+
+  <div class="facts">
+    <div><b>2012</b><span>بداية التدريب على تحليل البيانات</span></div>
+    <div><b>+100</b><span>دورة قُدّمت للجهات والشركات والأفراد</span></div>
+    <div><b>3</b><span>صيغ للتدريب عن بُعد</span></div>
+  </div>
+</header>
+
+<section id="formats">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 1 · FORMATS</span>
+    <h2>ثلاث طرق للتعلّم عن بُعد</h2>
+    <div class="formats">
+      <article class="fmt">
+        <span class="tag">LIVE · ZOOM / MEET</span>
+        <h3>ورش مباشرة أونلاين</h3>
+        <p>مجموعات صغيرة، جلسات تفاعلية تطبّق فيها على ملفاتك أثناء الشرح وتسأل مباشرة.</p>
+        <ul><li>2 إلى 4 جلسات، ساعتان لكل جلسة</li><li>تسجيل الجلسات وملفات التطبيق</li><li>شهادة إتمام</li></ul>
+      </article>
+      <article class="fmt">
+        <span class="tag">STREAM · OPEN</span>
+        <h3>جلسات بث مباشر</h3>
+        <p>جلسة شهرية مفتوحة عن أداة أو مهارة واحدة، مع أسئلة وأجوبة. مدخل سهل قبل الالتحاق بورشة كاملة.</p>
+        <ul><li>60 إلى 90 دقيقة</li><li>موضوع عملي واحد في كل جلسة</li><li>تُعلَن على لينكد إن وX</li></ul>
+      </article>
+      <article class="fmt">
+        <span class="tag">RECORDED · SELF-PACED</span>
+        <h3>دورات مسجّلة</h3>
+        <p>دروس قصيرة مرتّبة تشاهدها بوقتك، مع ملفات تمارين وحلول، ودعم بالرسائل عند الحاجة.</p>
+        <ul><li>وصول دائم بعد الدفع</li><li>ملفات Excel وPower BI للتطبيق</li><li>مناسبة لمن جدوله مزدحم</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 2 · COURSES</span>
+    <h2>الدورات المتاحة</h2>
+    <p class="lead" style="margin-top:10px">كل دورة متاحة للأفراد ضمن ورشة عامة، أو للشركات كبرنامج خاص بفريقها.</p>
+    <div class="sheet">
+      <table>
+        <thead><tr><th>CODE</th><th>الدورة</th><th>المستوى</th><th>المدة</th><th>الصيغ المتاحة</th></tr></thead>
+        <tbody>
+          <tr class="star"><td class="code">AID-01</td><td class="title"><b>الذكاء الاصطناعي لتحليل البيانات <span class="new">NEW</span></b><span>ChatGPT وClaude مع Excel وPower BI: تنظيف، تحليل، معادلات، وتقارير في وقت أقل</span></td><td>متوسط</td><td>8 ساعات</td><td><span class="chip on">مباشر</span><span class="chip on">مسجّل</span><span class="chip on">شركات</span></td></tr>
+          <tr><td class="code">EXL-01</td><td class="title"><b>Excel لتحليل البيانات</b><span>الجداول، الدوال الأساسية والمتقدمة، Pivot Tables، Power Query</span></td><td>مبتدئ ← متقدم</td><td>12 ساعة</td><td><span class="chip on">مباشر</span><span class="chip on">مسجّل</span><span class="chip on">شركات</span></td></tr>
+          <tr><td class="code">PBI-01</td><td class="title"><b>Power BI: من البيانات إلى لوحة مؤشرات</b><span>الاستيراد، النمذجة، DAX، التصميم، النشر والمشاركة</span></td><td>مبتدئ ← متوسط</td><td>12 ساعة</td><td><span class="chip on">مباشر</span><span class="chip on">مسجّل</span><span class="chip on">شركات</span></td></tr>
+          <tr><td class="code">SQL-01</td><td class="title"><b>SQL لتحليل البيانات</b><span>الاستعلامات، الربط بين الجداول، التجميع، وتجهيز البيانات للتقارير</span></td><td>مبتدئ ← متوسط</td><td>10 ساعات</td><td><span class="chip on">مباشر</span><span class="chip">مسجّل</span><span class="chip on">شركات</span></td></tr>
+          <tr><td class="code">AIP-01</td><td class="title"><b>أدوات الذكاء الاصطناعي للإنتاجية</b><span>ChatGPT وClaude وNotebookLM للكتابة والبحث والتلخيص والتقارير</span></td><td>للجميع</td><td>6 ساعات</td><td><span class="chip on">مباشر</span><span class="chip on">بث</span><span class="chip on">شركات</span></td></tr>
+          <tr><td class="code">AUT-01</td><td class="title"><b>أتمتة الأعمال ووكلاء الذكاء الاصطناعي</b><span>بناء تدفقات عمل تلقائية بـ n8n وربطها بأدوات الذكاء الاصطناعي</span></td><td>متوسط</td><td>8 ساعات</td><td><span class="chip on">مباشر</span><span class="chip">مسجّل</span><span class="chip on">شركات</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note" style="margin-top:10px">الخانة الملوّنة تعني أن الصيغة متاحة الآن؛ غير الملوّنة قيد التجهيز.</p>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 3 · TRACK RECORD</span>
+    <h2>جهات درّبت موظفيها</h2>
+    <div class="clients">
+      <span>المؤسسة الوطنية للنفط</span>
+      <span>شركة البريقة لتسويق النفط</span>
+      <span>مشروع النهر الصناعي العظيم</span>
+      <span>ليبيانا للاتصالات والتقنية</span>
+      <span>شركة معاملات</span>
+    </div>
+  </div>
+</section>
+
+<section id="corporate">
+  <div class="wrap corp">
+    <div>
+      <span class="eyebrow">SHEET 4 · TEAMS</span>
+      <h2>برامج تدريب عن بُعد للشركات والجهات</h2>
+      <p class="lead" style="margin-top:12px">تدريب فريقك كاملًا دون سفر أو قاعة. نبني البرنامج على طبيعة عملكم، ونستخدم أمثلة قريبة من بياناتكم.</p>
+    </div>
+    <ul>
+      <li>جلسة تقييم قصيرة لتحديد مستوى الفريق واحتياجه</li>
+      <li>محتوى وأمثلة مخصّصة لقطاعكم (نفط، اتصالات، مالية، خدمات)</li>
+      <li>مواعيد مرنة تناسب ساعات العمل</li>
+      <li>تمارين تطبيقية وتسجيلات للرجوع إليها</li>
+      <li>تقرير حضور ومستوى للمشاركين بعد البرنامج</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 5 · PROCESS</span>
+    <h2>كيف يتم الحجز</h2>
+    <ol class="steps">
+      <li><b>اختر الدورة والصيغة</b><span>من الجدول أعلاه، أو اطلب برنامجًا خاصًا.</span></li>
+      <li><b>أرسل طلب الحجز</b><span>جهّز الرسالة من الأسفل وأرسلها.</span></li>
+      <li><b>تأكيد الموعد والدفع</b><span>نتفق على الموعد وطريقة الدفع المناسبة لك.</span></li>
+      <li><b>رابط الجلسة والملفات</b><span>يصلك رابط Zoom أو Meet وملفات التطبيق.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 6 · BOOKING</span>
+    <h2>جهّز طلب الحجز</h2>
+    <p class="lead" style="margin-top:10px">اختر التفاصيل، وستُكتب رسالة جاهزة تنسخها وترسلها عبر واتساب أو البريد أو لينكد إن.</p>
+    <div class="builder">
+      <form class="fields" id="f">
+        <label for="course">الدورة
+          <select id="course">
+            <option>الذكاء الاصطناعي لتحليل البيانات</option>
+            <option>Excel لتحليل البيانات</option>
+            <option>Power BI: من البيانات إلى لوحة مؤشرات</option>
+            <option>SQL لتحليل البيانات</option>
+            <option>أدوات الذكاء الاصطناعي للإنتاجية</option>
+            <option>أتمتة الأعمال ووكلاء الذكاء الاصطناعي</option>
+          </select>
+        </label>
+        <label for="format">الصيغة
+          <select id="format">
+            <option>ورشة مباشرة أونلاين</option>
+            <option>دورة مسجّلة</option>
+            <option>برنامج خاص لفريق شركة</option>
+          </select>
+        </label>
+        <label for="people">عدد المشاركين
+          <input id="people" type="number" min="1" value="1" inputmode="numeric">
+        </label>
+        <label for="org">الاسم أو اسم الجهة
+          <input id="org" type="text" placeholder="مثال: إدارة المالية — شركة ...">
+        </label>
+      </form>
+      <div class="out">
+        <div class="msg" id="msg" aria-live="polite"></div>
+        <button class="btn primary" type="button" id="copy">انسخ الرسالة</button>
+        <span class="note" id="copied" hidden>نُسخت الرسالة. الصقها في واتساب أو البريد.</span>
+        <div class="contact">
+          <span>واتساب: <a href="https://wa.me/218918883311" target="_blank" rel="noopener"><code>+218 91 888 3311</code></a></span>
+          <span>البريد: <code>mr.salahk@gmail.com</code></span>
+          <span>لينكد إن: <a href="https://www.linkedin.com/in/salahedin-keshlaf" target="_blank" rel="noopener">linkedin.com/in/salahedin-keshlaf</a></span>
+          <span>X: <a href="https://x.com/01Salahedin" target="_blank" rel="noopener">@01Salahedin</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <span class="eyebrow">SHEET 7 · FAQ</span>
+    <h2>أسئلة شائعة</h2>
+    <div style="margin-top:16px">
+      <details><summary>ما المنصة التي تُقدَّم عليها الورش المباشرة؟</summary><p>Zoom أو Google Meet. يكفي جهاز كمبيوتر واتصال إنترنت مستقر، ويُفضّل وجود Excel أو Power BI Desktop مثبّتًا للتطبيق.</p></details>
+      <details><summary>هل أحتاج خبرة سابقة؟</summary><p>دورات Excel وPower BI وSQL تبدأ من الصفر. دورة الذكاء الاصطناعي لتحليل البيانات تفترض معرفة أساسية بـ Excel.</p></details>
+      <details><summary>ماذا لو فاتتني جلسة مباشرة؟</summary><p>تحصل على تسجيل الجلسة وملفاتها، وتستطيع إرسال أسئلتك بعدها.</p></details>
+      <details><summary>كيف يتم الدفع؟</summary><p>داخل ليبيا بالتحويل المصرفي المحلي. من خارج ليبيا بالعملة الرقمية المستقرة USDC. للشركات عرض سعر وفاتورة حسب البرنامج.</p></details>
+      <details><summary>هل تُمنح شهادة؟</summary><p>نعم، شهادة إتمام لمن يحضر الورشة كاملة أو ينهي الدورة المسجّلة.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <span>صلاح الدين كشلاف · تدريب تحليل البيانات والذكاء الاصطناعي عن بُعد</span>
+    <span>ليبيا والعالم العربي · بالعربية</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  function build(){
+    var c=$('course').value, f=$('format').value, n=parseInt($('people').value,10)||1, o=$('org').value.trim();
+    var lines=['مرحبًا أستاذ صلاح الدين،','','أرغب في الحجز:','• الدورة: '+c,'• الصيغة: '+f,'• عدد المشاركين: '+n];
+    if(o) lines.push('• الجهة / الاسم: '+o);
+    lines.push('','أرجو إرسال المواعيد المتاحة والتكلفة وطريقة الدفع.','شكرًا.');
+    $('msg').textContent=lines.join('\n');
+    $('copied').hidden=true;
+  }
+  ['course','format','people','org'].forEach(function(id){$(id).addEventListener('input',build);$(id).addEventListener('change',build)});
+  $('f').addEventListener('submit',function(e){e.preventDefault()});
+  $('copy').addEventListener('click',function(){
+    var t=$('msg').textContent;
+    var done=function(){$('copied').hidden=false};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents($('msg'));var s=getSelection();s.removeAllRanges();s.addRange(r);$('copied').textContent='حدّدت الرسالة، اضغط Ctrl+C لنسخها.';done()};
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+  build();
+})();
+</script>
+
+</body>
+</html>
